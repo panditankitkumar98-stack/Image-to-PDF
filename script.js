@@ -1,4 +1,10 @@
-// ==============================
+const progressBar=document.getElementById("progressBar");
+
+const progressText=document.getElementById("progressText");
+
+const pageSize=document.getElementById("pageSize");
+
+const fitMode=document.getElementById("fitMode");// ==============================
 // AlphaDev Stack - Image to PDF
 // ==============================
 
@@ -84,6 +90,11 @@ convertBtn.addEventListener("click", async function(){
     const pdf = new jsPDF();
 
     for(let i=0;i<images.length;i++){
+        let percent=Math.round(((i+1)/images.length)*100);
+
+        progressBar.style.width=percent+"%";
+
+        progressText.innerHTML=percent+"%";
 
         const file=images[i];
 
@@ -114,6 +125,9 @@ convertBtn.addEventListener("click", async function(){
     }
 
     pdf.save("AlphaDevStack.pdf");
+    progressBar.style.width="0%";
+
+    progressText.innerHTML="0%";
 
     showToast("✅ PDF Downloaded Successfully");
 
@@ -205,5 +219,22 @@ setTimeout(()=>{
 toast.remove();
 
 },3000);
+
+}
+const toggle=document.getElementById("themeToggle");
+
+toggle.onclick=()=>{
+
+document.body.classList.toggle("light");
+
+if(document.body.classList.contains("light")){
+
+toggle.innerHTML="☀️ Light Mode";
+
+}else{
+
+toggle.innerHTML="🌙 Dark Mode";
+
+}
 
 }
