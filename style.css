@@ -1172,3 +1172,112 @@ font-size:22px;
 color:#94a3b8;
 
 }
+/* ==========================
+PDF SETTINGS
+========================== */
+
+.pdfSettings{
+
+margin:70px auto;
+
+max-width:900px;
+
+background:rgba(255,255,255,.05);
+
+padding:30px;
+
+border-radius:20px;
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.settingGrid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:30px;
+
+margin-top:20px;
+
+}
+
+.setting{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.setting label{
+
+margin-bottom:10px;
+
+font-weight:600;
+
+}
+
+.setting select{
+
+padding:15px;
+
+background:#0f172a;
+
+color:white;
+
+border-radius:12px;
+
+border:none;
+
+font-size:16px;
+
+}
+
+/* Progress */
+
+.progressBox{
+
+max-width:800px;
+
+margin:40px auto;
+
+}
+
+.progress{
+
+height:10px;
+
+background:#1e293b;
+
+border-radius:20px;
+
+overflow:hidden;
+
+}
+
+#progressBar{
+
+height:100%;
+
+width:0%;
+
+background:linear-gradient(90deg,#3b82f6,#7c3aed);
+
+transition:.3s;
+
+}
+
+#progressText{
+
+margin-top:10px;
+
+text-align:center;
+
+color:#94a3b8;
+
+}
