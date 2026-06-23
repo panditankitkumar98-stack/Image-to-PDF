@@ -1281,3 +1281,234 @@ text-align:center;
 color:#94a3b8;
 
 }
+.light{
+
+background:#f8fafc;
+
+color:#111827;
+
+}
+
+.light nav{
+
+background:white;
+
+}
+
+.light .uploadBox,
+
+.light .card,
+
+.light .pdfSettings,
+
+.light footer{
+
+background:white;
+
+color:black;
+
+}
+
+.light select{
+
+background:white;
+
+color:black;
+
+}
+/* ===========================
+LOADER
+=========================== */
+
+.loader{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100vh;
+
+background:rgba(5,8,22,.9);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+z-index:9999;
+
+visibility:hidden;
+
+opacity:0;
+
+transition:.4s;
+
+}
+
+.loader.show{
+
+visibility:visible;
+
+opacity:1;
+
+}
+
+.spinner{
+
+width:70px;
+
+height:70px;
+
+border:7px solid rgba(255,255,255,.2);
+
+border-top:7px solid #3b82f6;
+
+border-radius:50%;
+
+animation:spin 1s linear infinite;
+
+}
+
+.loader h2{
+
+margin-top:25px;
+
+}
+
+/* Toast */
+
+.toast{
+
+position:fixed;
+
+bottom:40px;
+
+right:40px;
+
+padding:18px 28px;
+
+background:#22c55e;
+
+color:white;
+
+border-radius:14px;
+
+font-weight:600;
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.4s;
+
+z-index:9999;
+
+box-shadow:0 15px 40px rgba(0,0,0,.3);
+
+}
+
+.toast.show{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+/* Upload Animation */
+
+.uploadBox{
+
+animation:fadeUp .8s ease;
+
+}
+
+.card{
+
+animation:fadeUp 1s ease;
+
+}
+
+.imageCard{
+
+animation:fadeUp .5s ease;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* Ripple Button */
+
+#convertBtn{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+#convertBtn::after{
+
+content:"";
+
+position:absolute;
+
+width:0;
+
+height:0;
+
+background:rgba(255,255,255,.25);
+
+border-radius:50%;
+
+top:50%;
+
+left:50%;
+
+transform:translate(-50%,-50%);
+
+transition:.5s;
+
+}
+
+#convertBtn:active::after{
+
+width:450px;
+
+height:450px;
+
+}
+.uploadBox.drag{
+
+border-color:#3b82f6;
+
+background:rgba(59,130,246,.12);
+
+transform:scale(1.02);
+
+}
