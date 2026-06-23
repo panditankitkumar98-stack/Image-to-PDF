@@ -2,269 +2,202 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+    <title>AlphaDev Stack | Image to PDF</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<title>AlphaDev Stack | Image to PDF</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-<link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="bg-circle one"></div>
-<div class="bg-circle two"></div>
+    <div class="bg-circle one"></div>
+    <div class="bg-circle two"></div>
 
-<nav>
+    <!-- Navbar -->
 
-<div class="logo">
+    <nav>
 
-<i class="fa-solid fa-file-pdf"></i>
+        <div class="logo">
+            <i class="fa-solid fa-file-pdf"></i>
+            <h2>AlphaDev Stack</h2>
+        </div>
 
-<h2>AlphaDev Stack</h2>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
 
-</div>
+        <button id="themeToggle" class="darkBtn">
+            🌙 Dark Mode
+        </button>
 
-<ul>
+    </nav>
 
-<li><a href="#">Home</a></li>
+    <!-- Hero -->
 
-<li><a href="#">Features</a></li>
+    <section class="hero">
 
-<li><a href="#">About</a></li>
+        <div class="badge">
+            🛡 100% Free • Fast • Secure
+        </div>
 
-</ul>
+        <h1>
+            Image to <span>PDF</span> Converter
+        </h1>
 
-<button class="darkBtn">
+        <p>
+            Convert your images into high-quality PDF files in seconds.
+        </p>
 
-<i class="fa-solid fa-moon"></i>
+        <!-- Upload -->
 
-Dark Mode
+        <div class="uploadBox">
 
-</button>
+            <div class="uploadIcon">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+            </div>
 
-</nav>
+            <h2>Drag & Drop Images Here</h2>
 
-<section class="hero">
+            <p>or</p>
 
-<div class="badge">
+            <input
+                type="file"
+                id="imageInput"
+                multiple
+                accept="image/*"
+                hidden>
 
-🛡 100% Free • Fast • Secure
+            <label for="imageInput" class="uploadBtn">
+                Choose Images
+            </label>
 
-</div>
+            <p class="small">
+                Supports JPG PNG WEBP
+            </p>
 
-<h1>
+        </div>
 
-Image to
+        <!-- PDF SETTINGS -->
 
-<span>PDF</span>
+        <div class="pdfSettings">
 
-Converter
+            <h3>PDF Settings</h3>
 
-</h1>
+            <div class="settingGrid">
 
-<p>
+                <div class="setting">
+                    <label>Page Size</label>
 
-Convert your images into high-quality PDF files in seconds.
+                    <select id="pageSize">
+                        <option value="A4">A4</option>
+                        <option value="Letter">Letter</option>
+                        <option value="Legal">Legal</option>
+                    </select>
+                </div>
 
-</p>
+                <div class="setting">
 
-<div class="uploadBox">
+                    <label>Image Fit</label>
 
-<div class="uploadIcon">
+                    <select id="fitMode">
+                        <option value="fit">Fit Page</option>
+                        <option value="fill">Fill Page</option>
+                    </select>
 
-<i class="fa-solid fa-cloud-arrow-up"></i>
+                </div>
 
-</div>
+            </div>
 
-<h2>
+        </div>
 
-Drag & Drop Images Here
+        <!-- FEATURES -->
 
-</h2>
+        <div class="features">
 
-<p>
+            <div class="card">
+                <i class="fa-solid fa-images"></i>
+                <h3>Multiple Images</h3>
+                <p>Merge unlimited images</p>
+            </div>
 
-or
+            <div class="card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>100% Secure</h3>
+                <p>Your files never leave browser</p>
+            </div>
 
-</p>
+            <div class="card">
+                <i class="fa-solid fa-bolt"></i>
+                <h3>Fast</h3>
+                <p>Create PDF instantly</p>
+            </div>
 
-<input
+            <div class="card">
+                <i class="fa-solid fa-file-pdf"></i>
+                <h3>High Quality</h3>
+                <p>No image compression</p>
+            </div>
 
-type="file"
+        </div>
 
-id="imageInput"
+        <!-- Preview -->
 
-multiple
+        <h2 class="title">
+            Selected Images
+        </h2>
 
-accept="image/*"
+        <div id="preview" class="preview"></div>
 
-hidden>
+        <!-- Progress -->
 
-<label for="imageInput" class="uploadBtn">
+        <div class="progressBox">
 
-Choose Images
+            <div class="progress">
+                <div id="progressBar"></div>
+            </div>
 
-</label>
+            <p id="progressText">
+                0%
+            </p>
 
-<p class="small">
+        </div>
 
-Supports JPG PNG WEBP
+        <!-- Convert -->
 
-</p>
+        <button id="convertBtn">
 
-</div>
+            <i class="fa-solid fa-file-arrow-down"></i>
 
-<div class="features">
+            Convert To PDF
 
-<div class="card">
+        </button>
 
-<i class="fa-solid fa-images"></i>
+    </section>
 
-<h3>Multiple Images</h3>
+    <footer>
+        Made with ❤️ by AlphaDev Stack
+    </footer>
 
-<p>Merge unlimited images</p>
+    <!-- jsPDF -->
 
-</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-<div class="card">
+    <!-- Script -->
 
-<i class="fa-solid fa-shield-halved"></i>
-
-<h3>100% Secure</h3>
-
-<p>Your files never leave browser</p>
-
-</div>
-
-<div class="card">
-
-<i class="fa-solid fa-bolt"></i>
-
-<h3>Fast</h3>
-
-<p>Create PDF instantly</p>
-
-</div>
-
-<div class="card">
-
-<i class="fa-solid fa-file-pdf"></i>
-
-<h3>High Quality</h3>
-
-<p>No image compression</p>
-
-</div>
-
-</div>
-
-<h2 class="title">
-
-Selected Images
-
-</h2>
-
-<div id="preview" class="preview">
-
-</div>
-
-<button id="convertBtn">
-
-<i class="fa-solid fa-file-arrow-down"></i>
-
-Convert To PDF
-
-</button>
-
-</section>
-
-<footer>
-
-Made with ❤️ by AlphaDev Stack
-
-</footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 
 </html>
-<div class="pdfSettings">
-
-<h3>PDF Settings</h3>
-
-<div class="settingGrid">
-
-<div class="setting">
-
-<label>Page Size</label>
-
-<select id="pageSize">
-
-<option value="a4">A4</option>
-
-<option value="letter">Letter</option>
-
-<option value="legal">Legal</option>
-
-</select>
-
-</div>
-
-<div class="setting">
-
-<label>Image Fit</label>
-
-<select id="fitMode">
-
-<option value="contain">Fit Page</option>
-
-<option value="cover">Fill Page</option>
-
-</select>
-
-</div>
-
-</div>
-
-</div>
-<div class="progressBox">
-
-<div class="progress">
-
-<div id="progressBar"></div>
-
-</div>
-
-<p id="progressText">
-
-0%
-
-</p>
-
-</div>
-<button class="darkBtn">
-
-Dark Mode
-
-</button>
-<button id="themeToggle" class="darkBtn">
-
-🌙 Dark Mode
-
-</button>
