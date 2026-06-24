@@ -1,1514 +1,855 @@
-/* Google Font */
+/* ===================================
+   AlphaDev Stack - Image to PDF
+   Global Styles
+=================================== */
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --primary:#3b82f6;
+    --secondary:#7c3aed;
+    --bg:#050816;
+    --card:rgba(255,255,255,.06);
+    --border:rgba(255,255,255,.10);
+    --text:#ffffff;
+    --muted:#94a3b8;
+    --success:#22c55e;
 }
 
 body{
-
-background:#050816;
-
-color:white;
-
-overflow-x:hidden;
-
-min-height:100vh;
-
-position:relative;
-
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+    overflow-x:hidden;
+    position:relative;
 }
 
-/* Background */
+/* ===========================
+   Animated Background
+=========================== */
 
 .bg-circle{
-
-position:fixed;
-
-border-radius:50%;
-
-filter:blur(120px);
-
-z-index:-1;
-
+    position:fixed;
+    border-radius:50%;
+    filter:blur(120px);
+    z-index:-1;
 }
 
 .one{
-
-width:350px;
-
-height:350px;
-
-background:#2563eb;
-
-top:-120px;
-
-left:-120px;
-
-opacity:.4;
-
+    width:350px;
+    height:350px;
+    background:#2563eb;
+    top:-120px;
+    left:-120px;
+    opacity:.35;
 }
 
 .two{
-
-width:400px;
-
-height:400px;
-
-background:#7c3aed;
-
-bottom:-150px;
-
-right:-150px;
-
-opacity:.35;
-
+    width:450px;
+    height:450px;
+    background:#7c3aed;
+    bottom:-150px;
+    right:-150px;
+    opacity:.30;
 }
 
-/* Navbar */
+/* ===========================
+   Navbar
+=========================== */
 
 nav{
+    width:100%;
+    height:80px;
+    padding:0 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-width:100%;
+    position:sticky;
+    top:0;
 
-height:80px;
+    backdrop-filter:blur(20px);
+    background:rgba(255,255,255,.05);
 
-padding:0 8%;
+    border-bottom:1px solid rgba(255,255,255,.08);
 
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-position:sticky;
-
-top:0;
-
-background:rgba(255,255,255,.05);
-
-backdrop-filter:blur(20px);
-
-border-bottom:1px solid rgba(255,255,255,.08);
-
-z-index:1000;
-
+    z-index:999;
 }
 
 .logo{
-
-display:flex;
-
-align-items:center;
-
-gap:12px;
-
-font-size:20px;
-
-font-weight:700;
-
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
 
 .logo i{
+    color:var(--primary);
+    font-size:30px;
+}
 
-font-size:30px;
-
-color:#4f8cff;
-
+.logo h2{
+    font-size:24px;
+    font-weight:700;
 }
 
 nav ul{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
 
-display:flex;
+nav ul a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
 
-gap:40px;
+nav ul a:hover{
+    color:var(--primary);
+}
 
-list-style:none;
+/* ===========================
+   Theme Button
+=========================== */
+
+#themeToggle{
+
+    padding:12px 22px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-weight:600;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    transition:.3s;
 
 }
 
-nav ul li a{
+#themeToggle:hover{
 
-text-decoration:none;
+    transform:translateY(-3px);
 
-color:white;
-
-font-weight:500;
-
-transition:.3s;
+    box-shadow:0 15px 35px rgba(59,130,246,.4);
 
 }
 
-nav ul li a:hover{
-
-color:#60a5fa;
-
-}
-
-.darkBtn{
-
-padding:12px 22px;
-
-border:none;
-
-border-radius:12px;
-
-background:linear-gradient(135deg,#3b82f6,#7c3aed);
-
-color:white;
-
-cursor:pointer;
-
-font-size:15px;
-
-transition:.3s;
-
-}
-
-.darkBtn:hover{
-
-transform:translateY(-3px);
-
-box-shadow:0 15px 40px rgba(59,130,246,.4);
-
-}
-
-/* Hero */
+/* ===========================
+   Hero
+=========================== */
 
 .hero{
 
-max-width:1200px;
+    width:100%;
+    max-width:1200px;
 
-margin:auto;
+    margin:auto;
 
-padding:70px 20px;
+    padding:80px 20px;
 
-text-align:center;
-
-}
-
-.badge{
-
-display:inline-block;
-
-padding:10px 18px;
-
-background:rgba(255,255,255,.08);
-
-border:1px solid rgba(255,255,255,.1);
-
-border-radius:50px;
-
-margin-bottom:35px;
-
-font-size:15px;
+    text-align:center;
 
 }
 
 .hero h1{
 
-font-size:70px;
+    font-size:72px;
 
-line-height:1.1;
+    font-weight:800;
 
-font-weight:800;
-
-margin-bottom:20px;
+    line-height:1.1;
 
 }
 
 .hero span{
 
-background:linear-gradient(90deg,#3b82f6,#7c3aed);
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
 
--webkit-background-clip:text;
+    -webkit-background-clip:text;
 
--webkit-text-fill-color:transparent;
+    -webkit-text-fill-color:transparent;
 
 }
 
 .hero p{
 
-max-width:700px;
+    margin-top:25px;
 
-margin:auto;
+    color:var(--muted);
 
-color:#94a3b8;
+    font-size:20px;
 
-font-size:18px;
+    max-width:700px;
 
-line-height:30px;
+    margin-left:auto;
+    margin-right:auto;
+
+    line-height:34px;
 
 }
+
 /* ===========================
-   UPLOAD BOX
+   Upload Box
 =========================== */
 
 .uploadBox{
 
-width:100%;
+    max-width:900px;
 
-max-width:900px;
+    margin:60px auto;
 
-margin:60px auto;
+    padding:60px;
 
-padding:60px 40px;
+    border:2px dashed rgba(96,165,250,.5);
 
-background:rgba(255,255,255,.06);
+    border-radius:28px;
 
-border:2px dashed rgba(96,165,250,.5);
+    background:rgba(255,255,255,.05);
 
-border-radius:30px;
+    backdrop-filter:blur(18px);
 
-backdrop-filter:blur(20px);
-
-transition:.4s;
-
-cursor:pointer;
-
-position:relative;
-
-overflow:hidden;
+    transition:.35s;
 
 }
 
 .uploadBox:hover{
 
-transform:translateY(-8px);
+    transform:translateY(-8px);
 
-border-color:#60a5fa;
+    border-color:var(--primary);
 
-box-shadow:0 25px 60px rgba(59,130,246,.25);
-
-background:rgba(255,255,255,.08);
+    box-shadow:0 20px 60px rgba(59,130,246,.25);
 
 }
 
-.uploadBox::before{
+.uploadBtn,
+.uploadBox label{
 
-content:"";
+    display:inline-block;
 
-position:absolute;
+    margin-top:25px;
 
-top:-50%;
+    padding:16px 40px;
 
-left:-50%;
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
 
-width:200%;
+    color:white;
 
-height:200%;
+    text-decoration:none;
 
-background:linear-gradient(
+    border-radius:15px;
 
-45deg,
+    cursor:pointer;
 
-transparent,
+    font-weight:600;
 
-rgba(255,255,255,.05),
-
-transparent
-
-);
-
-transform:rotate(25deg);
-
-animation:shine 6s linear infinite;
+    transition:.3s;
 
 }
 
-@keyframes shine{
+.uploadBtn:hover,
+.uploadBox label:hover{
 
-0%{
-
-transform:translateX(-100%) rotate(25deg);
-
-}
-
-100%{
-
-transform:translateX(100%) rotate(25deg);
+    transform:translateY(-3px);
 
 }
-
-}
-
-/* Upload Icon */
-
-.uploadIcon{
-
-width:120px;
-
-height:120px;
-
-margin:auto;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-background:linear-gradient(135deg,#3b82f6,#7c3aed);
-
-border-radius:50%;
-
-font-size:55px;
-
-color:white;
-
-box-shadow:0 15px 40px rgba(59,130,246,.45);
-
-animation:float 3s ease-in-out infinite;
-
-}
-
-@keyframes float{
-
-0%,100%{
-
-transform:translateY(0);
-
-}
-
-50%{
-
-transform:translateY(-10px);
-
-}
-
-}
-
-/* Upload Heading */
-
-.uploadBox h2{
-
-font-size:34px;
-
-margin-top:35px;
-
-font-weight:700;
-
-}
-
-.uploadBox p{
-
-margin-top:18px;
-
-font-size:18px;
-
-color:#94a3b8;
-
-}
-
-/* Upload Button */
-
-.uploadBtn{
-
-display:inline-block;
-
-margin-top:30px;
-
-padding:18px 45px;
-
-background:linear-gradient(135deg,#3b82f6,#7c3aed);
-
-color:white;
-
-font-size:18px;
-
-font-weight:600;
-
-border-radius:16px;
-
-cursor:pointer;
-
-transition:.35s;
-
-text-decoration:none;
-
-box-shadow:0 15px 35px rgba(59,130,246,.35);
-
-}
-
-.uploadBtn:hover{
-
-transform:translateY(-5px);
-
-box-shadow:0 25px 50px rgba(59,130,246,.5);
-
-}
-
-/* Small Text */
-
-.small{
-
-margin-top:25px;
-
-font-size:15px;
-
-letter-spacing:1px;
-
-color:#64748b;
-
-}
-
-/* Hide File Input */
 
 input[type=file]{
 
-display:none;
+    display:none;
 
 }
-┌────────────┐
-📷
-Multiple Images
-Merge unlimited images
-└────────────┘
-
-┌────────────┐
-🛡
-100% Secure
-Your files stay local
-└────────────┘
-
-┌────────────┐
-⚡
-Fast
-Instant conversion
-└────────────┘
-
-┌────────────┐
-📄
-High Quality
-No compression
-└────────────┘
-/* ===========================
-   IMAGE PREVIEW
-=========================== */
-
-.title{
-
-margin-top:80px;
-
-font-size:42px;
-
-font-weight:700;
-
-text-align:center;
-
-margin-bottom:40px;
-
-}
-
-/* Preview Container */
-
-.preview{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-
-gap:25px;
-
-width:100%;
-
-max-width:1200px;
-
-margin:auto;
-
-}
-
-/* Image Card */
-
-.imageCard{
-
-background:rgba(255,255,255,.06);
-
-border:1px solid rgba(255,255,255,.1);
-
-backdrop-filter:blur(20px);
-
-border-radius:22px;
-
-padding:18px;
-
-transition:.35s;
-
-position:relative;
-
-overflow:hidden;
-
-box-shadow:0 15px 40px rgba(0,0,0,.25);
-
-}
-
-/* Hover Effect */
-
-.imageCard:hover{
-
-transform:translateY(-10px);
-
-box-shadow:0 25px 60px rgba(59,130,246,.35);
-
-}
-
-/* Image */
-
-.imageCard img{
-
-width:100%;
-
-height:220px;
-
-object-fit:cover;
-
-border-radius:16px;
-
-transition:.35s;
-
-}
-
-.imageCard:hover img{
-
-transform:scale(1.05);
-
-}
-
-/* Image Name */
-
-.imageName{
-
-margin-top:15px;
-
-font-size:15px;
-
-color:#cbd5e1;
-
-white-space:nowrap;
-
-overflow:hidden;
-
-text-overflow:ellipsis;
-
-}
-
-/* Delete Button */
-
-.removeBtn{
-
-position:absolute;
-
-top:15px;
-
-right:15px;
-
-width:42px;
-
-height:42px;
-
-border:none;
-
-border-radius:50%;
-
-background:#ef4444;
-
-color:white;
-
-font-size:18px;
-
-cursor:pointer;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-transition:.3s;
-
-box-shadow:0 10px 25px rgba(239,68,68,.4);
-
-}
-
-.removeBtn:hover{
-
-background:#dc2626;
-
-transform:scale(1.1);
-
-}
-
-/* Image Counter */
-
-.counter{
-
-margin-top:35px;
-
-text-align:center;
-
-font-size:18px;
-
-font-weight:600;
-
-color:#94a3b8;
-
-}
-/* ===========================
-   CONVERT BUTTON
-=========================== */
-
-#convertBtn{
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-gap:15px;
-
-width:100%;
-
-max-width:420px;
-
-margin:60px auto;
-
-padding:20px;
-
-font-size:22px;
-
-font-weight:700;
-
-color:white;
-
-background:linear-gradient(135deg,#3b82f6,#7c3aed);
-
-border:none;
-
-border-radius:20px;
-
-cursor:pointer;
-
-transition:.35s;
-
-box-shadow:0 20px 50px rgba(59,130,246,.35);
-
-}
-
-#convertBtn i{
-
-font-size:24px;
-
-}
-
-#convertBtn:hover{
-
-transform:translateY(-6px) scale(1.02);
-
-box-shadow:0 30px 70px rgba(59,130,246,.5);
-
-}
-
-#convertBtn:active{
-
-transform:scale(.98);
-
-}
-
-/* ===========================
-   LOADING STATE
-=========================== */
-
-.loading{
-
-pointer-events:none;
-
-opacity:.8;
-
-}
-
-.loading::after{
-
-content:"";
-
-width:22px;
-
-height:22px;
-
-margin-left:12px;
-
-border:3px solid rgba(255,255,255,.3);
-
-border-top:3px solid white;
-
-border-radius:50%;
-
-display:inline-block;
-
-animation:spin .8s linear infinite;
-
-}
-
-@keyframes spin{
-
-0%{
-
-transform:rotate(0deg);
-
-}
-
-100%{
-
-transform:rotate(360deg);
-
-}
-
-}
-
-/* ===========================
-   FOOTER
-=========================== */
-
-footer{
-
-margin-top:100px;
-
-padding:35px 20px;
-
-text-align:center;
-
-color:#94a3b8;
-
-font-size:16px;
-
-border-top:1px solid rgba(255,255,255,.08);
-
-background:rgba(255,255,255,.03);
-
-backdrop-filter:blur(20px);
-
-}
-
-footer span{
-
-color:#60a5fa;
-
-font-weight:600;
-
-}
-
-/* ===========================
-   SCROLLBAR
-=========================== */
-
-::-webkit-scrollbar{
-
-width:10px;
-
-}
-
-::-webkit-scrollbar-track{
-
-background:#0b1120;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-background:linear-gradient(#3b82f6,#7c3aed);
-
-border-radius:10px;
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-background:#60a5fa;
-
-}
-/* ===========================
-   RESPONSIVE DESIGN
-=========================== */
-
-/* Laptop */
-
-@media (max-width:1200px){
-
-.hero h1{
-
-font-size:60px;
-
-}
-
-.features{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-.preview{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-}
-
-/* Tablet */
-
-@media (max-width:992px){
-
-nav{
-
-padding:0 5%;
-
-}
-
-nav ul{
-
-gap:20px;
-
-}
-
-.hero{
-
-padding:60px 20px;
-
-}
-
-.hero h1{
-
-font-size:48px;
-
-}
-
-.hero p{
-
-font-size:17px;
-
-}
-
-.uploadBox{
-
-padding:45px 25px;
-
-}
-
-.uploadBox h2{
-
-font-size:28px;
-
-}
-
-.features{
-
-grid-template-columns:repeat(2,1fr);
-
-gap:20px;
-
-}
-
-.preview{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-}
-
-/* Mobile */
-
-@media (max-width:768px){
-
-nav{
-
-height:auto;
-
-padding:20px;
-
-flex-direction:column;
-
-gap:20px;
-
-}
-
-nav ul{
-
-flex-direction:column;
-
-gap:15px;
-
-text-align:center;
-
-}
-
-.logo h2{
-
-font-size:22px;
-
-}
-
-.hero{
-
-padding:40px 20px;
-
-}
-
-.hero h1{
-
-font-size:38px;
-
-}
-
-.hero p{
-
-font-size:16px;
-
-line-height:28px;
-
-}
-
-.badge{
-
-font-size:13px;
-
-padding:8px 15px;
-
-}
-
-.uploadBox{
-
-padding:35px 20px;
-
-}
-
-.uploadIcon{
-
-width:90px;
-
-height:90px;
-
-font-size:42px;
-
-}
-
-.uploadBox h2{
-
-font-size:24px;
-
-}
-
-.uploadBtn{
-
-width:100%;
-
-padding:16px;
-
-}
-
-.features{
-
-grid-template-columns:1fr;
-
-}
-
-.preview{
-
-grid-template-columns:1fr;
-
-}
-
-.imageCard img{
-
-height:220px;
-
-}
-
-#convertBtn{
-
-width:100%;
-
-font-size:18px;
-
-padding:18px;
-
-}
-
-footer{
-
-font-size:14px;
-
-}
-
-}
-
-/* Small Phones */
-
-@media (max-width:480px){
-
-.hero h1{
-
-font-size:30px;
-
-}
-
-.hero p{
-
-font-size:15px;
-
-}
-
-.uploadBox{
-
-padding:30px 15px;
-
-}
-
-.uploadIcon{
-
-width:80px;
-
-height:80px;
-
-font-size:36px;
-
-}
-
-.uploadBox h2{
-
-font-size:20px;
-
-}
-
-.title{
-
-font-size:30px;
-
-}
-
-.imageCard img{
-
-height:180px;
-
-}
-
-.darkBtn{
-
-width:100%;
-
-}
-
-}
-/* ===========================
-   FEATURES
-=========================== */
-
-.features{
-
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:25px;
-
-margin:70px auto;
-
-max-width:1200px;
-
-}
-
-.card{
-
-background:rgba(255,255,255,.05);
-
-border:1px solid rgba(255,255,255,.08);
-
-backdrop-filter:blur(20px);
-
-border-radius:22px;
-
-padding:35px;
-
-text-align:center;
-
-transition:.35s;
-
-}
-
-.card:hover{
-
-transform:translateY(-10px);
-
-box-shadow:0 20px 50px rgba(59,130,246,.25);
-
-}
-
-.card i{
-
-font-size:45px;
-
-margin-bottom:20px;
-
-color:#60a5fa;
-
-}
-
-.card h3{
-
-margin-bottom:10px;
-
-font-size:22px;
-
-}
-
-.card p{
-
-color:#94a3b8;
-
-}
-/* ==========================
-PDF SETTINGS
-========================== */
+/* ===================================
+   SECTION 2
+   PDF Settings
+=================================== */
 
 .pdfSettings{
 
-margin:70px auto;
+    max-width:1000px;
 
-max-width:900px;
+    margin:60px auto;
 
-background:rgba(255,255,255,.05);
+    padding:35px;
 
-padding:30px;
+    border-radius:25px;
 
-border-radius:20px;
+    background:rgba(255,255,255,.05);
 
-backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.08);
 
-border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+
+}
+
+.pdfSettings h2{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+    font-size:30px;
 
 }
 
 .settingGrid{
 
-display:grid;
+    display:grid;
 
-grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(2,1fr);
 
-gap:30px;
-
-margin-top:20px;
+    gap:25px;
 
 }
 
 .setting{
 
-display:flex;
+    display:flex;
 
-flex-direction:column;
+    flex-direction:column;
 
 }
 
 .setting label{
 
-margin-bottom:10px;
+    margin-bottom:10px;
 
-font-weight:600;
+    font-weight:600;
 
-}
-
-.setting select{
-
-padding:15px;
-
-background:#0f172a;
-
-color:white;
-
-border-radius:12px;
-
-border:none;
-
-font-size:16px;
+    color:#cbd5e1;
 
 }
 
-/* Progress */
+.setting select,
+.setting input{
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#0f172a;
+
+    color:white;
+
+    font-size:16px;
+
+    outline:none;
+
+}
+
+.setting select:focus,
+.setting input:focus{
+
+    border:2px solid #3b82f6;
+
+}
+
+/* ===================================
+   Selected Images
+=================================== */
+
+.title{
+
+    text-align:center;
+
+    margin:70px 0 40px;
+
+    font-size:42px;
+
+    font-weight:700;
+
+}
+
+.preview{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+}
+
+/* ===================================
+   Image Card
+=================================== */
+
+.imageCard{
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    transition:.35s;
+
+    backdrop-filter:blur(20px);
+
+}
+
+.imageCard:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 50px rgba(59,130,246,.30);
+
+}
+
+.imageCard img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+}
+
+.imageName{
+
+    padding:15px;
+
+    text-align:center;
+
+    font-size:15px;
+
+    color:#cbd5e1;
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+    text-overflow:ellipsis;
+
+}
+
+/* ===================================
+   Delete Button
+=================================== */
+
+.removeBtn{
+
+    position:absolute;
+
+    top:12px;
+
+    right:12px;
+
+    width:40px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#ef4444;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+.removeBtn:hover{
+
+    background:#dc2626;
+
+    transform:scale(1.1);
+
+}
+
+/* ===================================
+   Progress Bar
+=================================== */
 
 .progressBox{
 
-max-width:800px;
+    max-width:900px;
 
-margin:40px auto;
+    margin:50px auto;
 
 }
 
 .progress{
 
-height:10px;
+    height:12px;
 
-background:#1e293b;
+    background:#1e293b;
 
-border-radius:20px;
+    border-radius:30px;
 
-overflow:hidden;
+    overflow:hidden;
 
 }
 
 #progressBar{
 
-height:100%;
+    width:0%;
 
-width:0%;
+    height:100%;
 
-background:linear-gradient(90deg,#3b82f6,#7c3aed);
+    background:linear-gradient(90deg,#3b82f6,#7c3aed);
 
-transition:.3s;
+    transition:.35s;
 
 }
 
 #progressText{
 
-margin-top:10px;
+    margin-top:12px;
 
-text-align:center;
+    text-align:center;
 
-color:#94a3b8;
+    color:#94a3b8;
 
-}
-.light{
-
-background:#f8fafc;
-
-color:#111827;
+    font-size:16px;
 
 }
 
-.light nav{
-
-background:white;
-
-}
-
-.light .uploadBox,
-
-.light .card,
-
-.light .pdfSettings,
-
-.light footer{
-
-background:white;
-
-color:black;
-
-}
-
-.light select{
-
-background:white;
-
-color:black;
-
-}
-/* ===========================
-LOADER
-=========================== */
-
-.loader{
-
-position:fixed;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-height:100vh;
-
-background:rgba(5,8,22,.9);
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-flex-direction:column;
-
-z-index:9999;
-
-visibility:hidden;
-
-opacity:0;
-
-transition:.4s;
-
-}
-
-.loader.show{
-
-visibility:visible;
-
-opacity:1;
-
-}
-
-.spinner{
-
-width:70px;
-
-height:70px;
-
-border:7px solid rgba(255,255,255,.2);
-
-border-top:7px solid #3b82f6;
-
-border-radius:50%;
-
-animation:spin 1s linear infinite;
-
-}
-
-.loader h2{
-
-margin-top:25px;
-
-}
-
-/* Toast */
-
-.toast{
-
-position:fixed;
-
-bottom:40px;
-
-right:40px;
-
-padding:18px 28px;
-
-background:#22c55e;
-
-color:white;
-
-border-radius:14px;
-
-font-weight:600;
-
-opacity:0;
-
-visibility:hidden;
-
-transition:.4s;
-
-z-index:9999;
-
-box-shadow:0 15px 40px rgba(0,0,0,.3);
-
-}
-
-.toast.show{
-
-opacity:1;
-
-visibility:visible;
-
-}
-
-/* Upload Animation */
-
-.uploadBox{
-
-animation:fadeUp .8s ease;
-
-}
-
-.card{
-
-animation:fadeUp 1s ease;
-
-}
-
-.imageCard{
-
-animation:fadeUp .5s ease;
-
-}
-
-@keyframes fadeUp{
-
-from{
-
-opacity:0;
-
-transform:translateY(30px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-/* Ripple Button */
+/* ===================================
+   Convert Button
+=================================== */
 
 #convertBtn{
 
-position:relative;
+    display:flex;
 
-overflow:hidden;
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    width:100%;
+
+    max-width:420px;
+
+    margin:50px auto;
+
+    padding:20px;
+
+    border:none;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    background:linear-gradient(135deg,#3b82f6,#7c3aed);
+
+    transition:.35s;
+
+    box-shadow:0 20px 45px rgba(59,130,246,.35);
+
+}
+
+#convertBtn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 30px 60px rgba(59,130,246,.50);
 
 }
 
-#convertBtn::after{
+#convertBtn:disabled{
 
-content:"";
+    opacity:.7;
 
-position:absolute;
-
-width:0;
-
-height:0;
-
-background:rgba(255,255,255,.25);
-
-border-radius:50%;
-
-top:50%;
-
-left:50%;
-
-transform:translate(-50%,-50%);
-
-transition:.5s;
+    cursor:not-allowed;
 
 }
 
-#convertBtn:active::after{
+/* ===================================
+   Footer
+=================================== */
 
-width:450px;
+footer{
 
-height:450px;
+    margin-top:80px;
+
+    padding:30px;
+
+    text-align:center;
+
+    color:#94a3b8;
+
+    border-top:1px solid rgba(255,255,255,.08);
 
 }
+/* ===================================
+   SECTION 3
+   Dark / Light Theme
+=================================== */
+
+body.light{
+    background:#f8fafc;
+    color:#111827;
+}
+
+body.light nav{
+    background:rgba(255,255,255,.9);
+}
+
+body.light .uploadBox,
+body.light .pdfSettings,
+body.light .imageCard,
+body.light footer{
+    background:#ffffff;
+    color:#111827;
+    border:1px solid #e5e7eb;
+}
+
+body.light nav ul a{
+    color:#111827;
+}
+
+body.light .hero p,
+body.light .imageName,
+body.light #progressText,
+body.light .setting label{
+    color:#475569;
+}
+
+body.light .setting select,
+body.light .setting input{
+    background:#f1f5f9;
+    color:#111827;
+}
+
+/* ===========================
+   Loader
+=========================== */
+
+.loader{
+    position:fixed;
+    inset:0;
+    background:rgba(5,8,22,.9);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    z-index:9999;
+    visibility:hidden;
+    opacity:0;
+    transition:.3s;
+}
+
+.loader.show{
+    visibility:visible;
+    opacity:1;
+}
+
+.spinner{
+    width:70px;
+    height:70px;
+    border:7px solid rgba(255,255,255,.25);
+    border-top:7px solid #3b82f6;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+}
+
+.loader h2{
+    margin-top:20px;
+    color:white;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* ===========================
+   Toast
+=========================== */
+
+.toast{
+    position:fixed;
+    right:30px;
+    bottom:30px;
+    background:#22c55e;
+    color:#fff;
+    padding:16px 24px;
+    border-radius:14px;
+    font-weight:600;
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+    z-index:9999;
+}
+
+.toast.show{
+    opacity:1;
+    visibility:visible;
+}
+
+/* ===========================
+   Drag & Drop Highlight
+=========================== */
+
 .uploadBox.drag{
+    border-color:#3b82f6;
+    background:rgba(59,130,246,.12);
+    transform:scale(1.02);
+}
 
-border-color:#3b82f6;
+/* ===========================
+   Fade Animation
+=========================== */
 
-background:rgba(59,130,246,.12);
+@keyframes fadeUp{
 
-transform:scale(1.02);
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.hero,
+.uploadBox,
+.pdfSettings,
+.imageCard,
+.card{
+    animation:fadeUp .6s ease;
+}
+
+/* ===========================
+   Scrollbar
+=========================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#0f172a;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(#3b82f6,#7c3aed);
+    border-radius:20px;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:992px){
+
+    .settingGrid{
+        grid-template-columns:1fr;
+    }
+
+    .preview{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero h1{
+        font-size:54px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        height:auto;
+        padding:20px;
+        gap:20px;
+    }
+
+    nav ul{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .uploadBox{
+        padding:35px 20px;
+    }
+
+    .preview{
+        grid-template-columns:1fr;
+    }
+
+    #convertBtn{
+        width:100%;
+        font-size:18px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .title{
+        font-size:28px;
+    }
 
 }
